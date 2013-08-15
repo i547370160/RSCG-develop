@@ -32,7 +32,7 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 
 /*左侧的菜单栏*/
 .left_menu{background:#252525;position:fixed;top:5px;left:0;width:250px;z-index:1002;height:100%;overflow:hidden;min-height:520px;}
-.left_menu .logo{margin-top:25px;margin-bottom:30px;text-align:center;}
+.left_menu .logo{margin:25px 0 30px 0; text-align:center;}
 .left_menu .top_nav{background:#323232;margin:0;}
 .left_menu .top_nav ul li{float:left;text-align:center;width:83px;padding:15px 0 5px 0;}
 .left_menu .top_nav ul li:hover{background:#474bcf;}
