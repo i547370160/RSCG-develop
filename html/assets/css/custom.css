@@ -10,8 +10,7 @@ a:hover{text-decoration: none;}
 a.f12{color:#6b6b6b;font-size:12px;}
 a.f12:hover{color:#006595}
 
-.blue{color:#006595}
-a.blue{color:#006595;}
+a.blue, .blue{color:#006595;}
 a.more{float:right;font-size:14px;color:#006595;}
 
 /*test*/
