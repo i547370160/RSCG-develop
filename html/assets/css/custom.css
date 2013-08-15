@@ -64,7 +64,7 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 .left_menu_btn{position:fixed;z-index:1004;top:25px;left:15px;font-size:18px;color:#FFF;background:rgba(0,0,0,0.5);cursor:pointer;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;width:35px;height:35px;text-align:center;line-height:35px;}
 
 /*中间的内容区域*/
-.middle_content{min-height:100%;position:relative;left:0;top:0;z-index:1;padding-left:250px;padding-right:0px;padding-top:5px;}
+.middle_content{min-height:100%;position:relative;left:0;top:0;z-index:1;padding:5px 0 0 250px;}
 
 /*iPad*/
 @media (max-width: 768px) { 
