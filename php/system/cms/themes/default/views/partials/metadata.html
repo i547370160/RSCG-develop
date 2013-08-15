@@ -1,0 +1,56 @@
+<!-- Begin meta tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="yoozi" />
+<meta name="keywords" content="{{ settings:meta_keywords }}">
+<meta name="distribution" content="{{ settings:meta_distribution }}" />
+<meta name="resource-type" content="document" />
+<meta name="language" content="{{ lang:code }}" />
+
+{{ theme:favicon file="favicon.ico" sizes="16x16 32x32" }}
+
+<base href="{{ url:base }}" />
+
+<!-- Begin stylesheets -->
+{{ asset:css file="bootstrap.min.css" }}
+{{ asset:css file="bootstrap-responsive.min.css" }}
+{{ asset:css file="font-awesome.min.css" }}
+{{ asset:css file="custom.css" }}
+
+{{ if {url:segments segment="2"} == 'business_list_detail' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+    {{ asset:css file="jquery.fancybox-thumbs.css" }}
+{{ endif }}
+
+{{ if {url:segments segment="2"} == 'business_cases' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+{{ endif }}
+
+{{ if {url:segments segment="2"} == 'work_cases' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+{{ endif }}
+
+{{ if {url:segments segment="2"} == 'skill_cases' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+{{ endif }}
+
+{{ if {url:segments segment="2"} == 'family_cases' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+{{ endif }}
+
+{{ if {url:segments segment="2"} == 'other_cases' }}
+    {{ asset:css file="jquery.fancybox.css" }}
+{{ endif }}
+
+<!-- End stylesheets -->
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+{{ asset:css file="font-awesome-ie7.min.css" }}
+<![endif]-->
+
+{{ asset:render }}
+<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>

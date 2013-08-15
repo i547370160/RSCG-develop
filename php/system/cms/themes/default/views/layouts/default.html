@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ theme:partial name="metadata" }}
+</head>
+<body>
+
+	<!--顶部的line-->
+	<div class="top_line"></div>
+	<!--#end 顶部的line-->
+
+	{{ theme:partial name="sidebar" }}
+
+	<!--中间的内容区域-->
+	<div class="container-fluid middle_content home_page">
+		{{ theme:partial name="content" }}
+			
+		{{ theme:partial name="footer" }}
+	</div>
+	<!--#end 中间的内容区域-->	
+	
+</body>
+</html>

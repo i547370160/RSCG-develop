@@ -1,0 +1,261 @@
+	<!--底部联系我们-->
+	<footer class="row-fluid">
+		<div class="span12">
+			<div class="span4">
+				<span class="title"><i class="icon-globe"></i> 联系方式</span>
+				<p>
+					{{ settings:address }}<br />
+					<strong>PHONE: </strong> {{ settings:phone }}<br />
+					<strong>FAX: </strong> {{ settings:fax }}<br />
+					<strong>Email: </strong> {{ settings:email }}<br />
+				</p>
+			</div>
+			<div class="span4">
+				<span class="title"><i class="icon-comments-alt"></i> 线上联系</span>
+				<div class="online_talk">
+					<a href="#" title="在线 QQ 交谈">{{ theme:image file="chat_qq.png" width="55" }}</a>
+					<a href="#" title="skype 交谈">{{ theme:image file="chat_skype.png" width="55" }}</a>
+					<a href="{{ settings:weibo }}" target="_blank" title="关注新浪微博">{{ theme:image file="chat_weibo.png" width="65" }}</a>
+				</div>
+			</div>
+			<div class="span4">
+				<span class="title"><i class="icon-phone-sign"></i> 咨询热线</span>
+				<h2>{{ settings:hotline_number }}</h2>
+				<span class="title"><i class="icon-file-alt"></i> 意见反馈</span>
+				<h5><a href="#" class="f12"><i class="icon-edit"></i> 填写咨询/反馈表单</a></h5>
+			</div>
+		</div>
+		<br class="clearall" />
+		<div class="bottom">&copy; Copyright Smart Consulting Group {{ theme:image file="single_logo.png" width="16" }} 锐智移民及生意代理集团 高端移民专家 </div>
+	</footer>
+	<!--#end 底部联系我们-->
+	
+	<!--小分辨率下顶部-->
+	<div class="tiny_top">
+		{{ theme:image file="black_logo.png" width="202" height="40" }}
+		<div class="left_menu_btn"><i class="icon-reorder"></i></div>
+	</div>
+    <!--#end 小分辨率下顶部-->
+
+    <!-- Begin javescripts -->
+    {{ theme:js file="jquery-1.8.0.min.js" }}
+    {{ theme:js file="bootstrap.min.js" }}
+    {{ theme:js file="custom.js" }}
+    <!-- End javescripts -->
+
+    {{ if {url:segments segment="1" default="home" } == 'home' }}
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //左侧菜单“首页”高亮
+                $(".top_nav > ul > li:eq(0)").addClass("cur");
+
+                //头部 banner 轮播
+                $('.carousel').carousel({ interval: 3500 })
+
+                //点击每日新职位的剪刀
+                $('.cut').click(function(){
+                    $(this).attr("src",'{{ theme:image_path file="cut_close.png" }}');
+                    $(this).animate({left: '+390px'}, function(){
+                        window.location.href = '{{ url:site }}' +  $(this).attr("data-href");
+                    });
+                });
+            });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'rscg' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+		        //左侧菜单“关于锐智”高亮
+		        $(".top_nav > ul > li:eq(1)").addClass("cur");
+	        });
+        </script> 
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'rscg_join' }}
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //招聘
+                $('.accordion-body').on('shown', function(){
+                    //console.log($(this).attr("id"));
+                    $(this).prev().find('.fright').html('<button class="btn btn-small btn-info" type="button">在线申请</button>');
+                }).on('hidden', function(){
+                    $(this).prev().find('.fright').html('<i class="icon-chevron-right"></i>');
+                });
+                //点击在线申请
+                $('.btn-info').live('click',function(){
+                    window.open($(this).parent().parent().attr('data-apply'));
+                    return false;
+                });
+            });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'news' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+		        //左侧菜单“最新资讯”高亮
+		        $(".top_nav > ul > li:eq(2)").addClass("cur");
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'work' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                //高亮左侧雇主移民
+	            $(".sub_nav > a:eq(0)").addClass("cur");  
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'business' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                //高亮左侧投资移民
+	            $(".sub_nav > a:eq(1)").addClass("cur");  
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'skill' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                //高亮左侧技术移民
+	            $(".sub_nav > a:eq(2)").addClass("cur");
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="1"} == 'family' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                //高亮左侧家庭移民
+	            $(".sub_nav > a:eq(3)").addClass("cur");
+	        });
+        </script>
+    {{ endif }}
+
+   {{ if {url:segments segment="1"} == 'other' }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                //高亮左侧其他移民
+	            $(".sub_nav > a:eq(4)").addClass("cur");
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'business_list_detail' }}
+
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=zh&region=cn"></script>
+        {{ theme:js file="jquery.fancybox.js" }}
+        {{ theme:js file="jquery.fancybox-thumbs.js" }}
+            
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //高亮左侧投资移民
+                $(".sub_nav > a:eq(1)").addClass("cur");
+
+                //查看大图
+                $('.fancybox-thumbs').fancybox({
+                        prevEffect : 'none',
+                        nextEffect : 'none',
+
+                        closeBtn  : true,
+                        arrows    : true,
+                        nextClick : true,
+
+                        helpers : {
+                            thumbs : {
+                                width  : 50,
+                                height : 50
+                            }
+                        }
+                    });
+
+                //google map
+                var map;
+                var address = '41e, 650 George St, Sydney, NSW, 2000'; 
+                init();
+                function init () {
+                    var geocoder = new google.maps.Geocoder();
+                    var marker=new google.maps.Marker();
+                    
+                    geocoder.geocode({'address':address},function(results, status){
+                    
+                        if(status == google.maps.GeocoderStatus.OK)
+                        {
+                            var latlng = results[0].geometry.location;
+                            var myOptions = {
+                                zoom:18,
+                                center:latlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                mapTypeControl:false,
+                                mapTypeControlOptions:{
+                                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+                                }
+                            };
+                            //创建地图
+                            map = new google.maps.Map(document.getElementById("google_map"), myOptions);
+
+                            //创建锚点
+                            marker.setOptions({
+                                position:latlng,
+                                title:address
+                            });
+                            marker.setMap(map);
+                        }
+                    });
+                }
+            
+            });
+        </script>
+    {{ endif }}
+    
+    {{ if {url:segments segment="2"} == 'business_cases' }}
+        {{ theme:js file="jquery.fancybox.js" }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                $('.fancybox').fancybox();
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'work_cases' }}
+        {{ theme:js file="jquery.fancybox.js" }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                $('.fancybox').fancybox();
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'skill_cases' }}
+        {{ theme:js file="jquery.fancybox.js" }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                $('.fancybox').fancybox();
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'family_cases' }}
+        {{ theme:js file="jquery.fancybox.js" }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                $('.fancybox').fancybox();
+	        });
+        </script>
+    {{ endif }}
+
+    {{ if {url:segments segment="2"} == 'other_cases' }}
+        {{ theme:js file="jquery.fancybox.js" }}
+        <script type="text/javascript">
+	        $(document).ready(function(){
+                $('.fancybox').fancybox();
+	        });
+        </script>
+    {{ endif }}
+
+

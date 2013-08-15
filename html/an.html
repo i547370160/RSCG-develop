@@ -1,0 +1,156 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>纯css打造安卓机器人</title> 
+<style type="text/css"> 
+body { font-family:"Lucida Sans Unicode"; font-size:14px; color:#4b4b4b; text-align:center; }  
+* { padding:0px; margin:0px; }  
+#container { position:relative; margin-left:auto; margin-right:auto; margin-top:50px;   
+width:700px; height:320px; text-align:left; vertical-align:top; }  
+#az,#az_head,#az_body,#az_lhand,#az_rhand,#az_lfoot,#az_rfoot,#az_line,#sword { position:absolute; }  
+#az { margin-left:300px; }  
+#az:before { content:''; position:absolute; top:350px; left:-270px; width:500px; height:50px; z-index:-10;  
+background:rgba(0,0,0,0.7);  
+border-radius:200px 200px 200px 200px / 25px 25px 25px 25px;  
+box-shadow:0 0 10px 10px rgba(0,0,0,0.5); }  
+#az_head { height:110px; width:220px; overflow:hidden; z-index:5;  
+border-radius:110px 110px 110px 110px / 100px 100px 10px 10px;  
+background:-moz-radial-gradient(74% 32%, ellipse, rgba(159,189,68,1) 0%, rgba(129,169,14,1) 12%, rgba(44,62,0,1) 100%);  
+background:-o-radial-gradient(74% 32%, ellipse, rgba(159,189,68,1) 0%, rgba(129,169,14,1) 12%, rgba(44,62,0,1) 100%);  
+background:-webkit-gradient(radial, 166 36, 0, 156 36, 160, from(rgba(159,189,68,1)), to(rgba(44,62,0,1)), color-stop(12%, rgba(129,169,14,1)));  
+}  
+#az_head:before { content:''; position:absolute; width:18px; height:22px; background:#fffa64;  
+top:50px; left:30px;  
+border-radius:9px / 11px;  
+box-shadow:inset 1px 1px 3px #000, 0 0 15px #fffa64;   
+transform:rotate(20deg);  
+-moz-transform:rotate(20deg);  
+-o-transform:rotate(20deg);  
+-webkit-transform:rotate(20deg);  
+}  
+#az_head:after { content:''; position:absolute; width:18px; height:22px; background:#fffa64;  
+top:50px; left:136px;  
+border-radius:9px / 11px;  
+box-shadow:inset 1px 1px 3px #000, 0 0 15px #fffa64;   
+transform:rotate(-2deg);  
+-moz-transform:rotate(-2deg);  
+-o-transform:rotate(-2deg);  
+-webkit-transform:rotate(-2deg); }  
+#az_body { width:220px; height:200px; background:red; top:103px;  
+border-radius:110px 110px 110px 110px / 10px 10px 40px 40px;  
+background:-moz-linear-gradient(center left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, left center, right center, from(rgba(44,62,0,1)), color-stop(66%,rgba(109,149,4,1)), color-stop(70%,rgba(109,149,4,1)), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1)); }  
+#az_body:before { content:''; position:absolute; width:100%; height:16px; background:#1f3204;  
+border-radius:110px 110px 110px 110px / 10px 10px 10px 10px; }  
+#az_body:after { content:''; position:absolute; width:100%; height:80px; background:#1f3204; top:120px;  
+border-radius:0 0 110px 110px / 0 0 40px 40px;  
+background:-moz-linear-gradient(center top, transparent, transparent 50%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, center top, center bottom, from(transparent), color-stop(60%, transparent), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(top, transparent, transparent 50%, rgba(44,62,0,1)); }  
+#az_lhand { z-index:-1; width:136px; height:46px; left:-88px; top:148px;  
+border-radius:23px;  
+transform:rotate(-30deg);  
+-moz-transform:rotate(-30deg);  
+-o-transform:rotate(-30deg);  
+-webkit-transform:rotate(-30deg);  
+background:-moz-linear-gradient(top, rgba(44,62,0,1), rgba(109,149,4,1) 55%, rgba(109,149,4,1) 60%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, center top, center bottom, from(rgba(44,62,0,1)), color-stop(55%,rgba(109,149,4,1)), color-stop(60%,rgba(109,149,4,1)), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(top, rgba(44,62,0,1), rgba(109,149,4,1) 55%, rgba(109,149,4,1) 60%, rgba(64,82,20,1)); }  
+#az_lhand:before { position:absolute; height:100%; width:50px; content:'';  
+border-radius:23px;  
+background:-moz-linear-gradient(center left, rgba(44,62,0,1), transparent 50%, transparent);  
+background:-webkit-gradient(linear, left center,right center, from(rgba(44,62,0,1)), color-stop(50%, transparent), to(transparent));  
+background:-o-linear-gradient(left, rgba(44,62,0,1), transparent 50%, transparent); }  
+#az_rhand { width:50px; height:136px; left:188px; top:130px;  
+border-radius:25px;  
+background:-moz-linear-gradient(left, rgba(70,88,26,1), rgba(139,179,24,1) 70%, rgba(109,149,4,1) 100%);  
+background:-webkit-gradient(linear, left center, right center, from(rgba(70,88,26,1)), color-stop(70%,rgba(139,179,24,1)), to(rgba(109,149,4,1)));  
+background:-o-linear-gradient(left, rgba(70,88,26,1), rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+box-shadow:-10px 6px 12px rgba(0,0,0,0.5); }  
+#az_rhand:before { position:absolute; height:46px; width:100%; content:''; top:90px;  
+border-radius:50px;  
+background:-moz-linear-gradient(top, transparent, transparent 65%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, center top,center bottom, from(transparent), color-stop(65%, transparent), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(top, transparent, transparent 50%, rgba(64,82,20,1)); }  
+#az_rfoot { width:50px; height:110px; left:140px; top:270px; z-index:-1;  
+border-radius:25px;  
+background:-moz-linear-gradient(left, rgba(40,58,0,1), rgba(110,150,0,1) 70%, rgba(109,149,4,1) 100%);  
+background:-webkit-gradient(linear, left center, right center, from(rgba(40,58,0,1)), color-stop(70%,rgba(110,150,0,1)), to(rgba(109,149,4,1)));  
+background:-o-linear-gradient(left, rgba(40,58,0,1), rgba(110,150,0,1) 70%, rgba(64,82,20,1)); }  
+#az_rfoot:before { position:absolute; height:46px; width:100%; content:''; top:64px;  
+border-radius:50px;  
+background:-moz-linear-gradient(top, transparent, transparent 65%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, center top,center bottom, from(transparent), color-stop(65%, transparent), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(top, transparent, transparent 50%, rgba(64,82,20,1));  
+}  
+#az_lfoot { width:50px; height:110px; left:30px; top:270px; z-index:-1;  
+border-radius:25px;  
+background:-moz-linear-gradient(left, rgba(40,58,0,1), rgba(110,150,0,1) 70%, rgba(109,149,4,1) 100%);  
+background:-webkit-gradient(linear, left center, right center, from(rgba(40,58,0,1)), color-stop(70%,rgba(110,150,0,1)), to(rgba(109,149,4,1)));  
+background:-o-linear-gradient(left, rgba(40,58,0,1), rgba(110,150,0,1) 70%, rgba(64,82,20,1));  
+}  
+#az_lfoot:before { position:absolute; height:46px; width:100%; content:''; top:64px;  
+border-radius:50px;  
+background:-moz-linear-gradient(top, transparent, transparent 65%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, center top,center bottom, from(transparent), color-stop(65%, transparent), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(top, transparent, transparent 50%, rgba(64,82,20,1));  
+}  
+#az_line { width:6px; height:50px; left:170px; z-index:5; top:-20px;  
+border-radius:5px;  
+background:-moz-linear-gradient(center left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, left center, right center, from(rgba(44,62,0,1)), color-stop(66%,rgba(109,149,4,1)), color-stop(70%,rgba(109,149,4,1)), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+transform:rotate(30deg);  
+-moz-transform:rotate(30deg);  
+-o-transform:rotate(30deg);  
+-webkit-transform:rotate(30deg);  
+}  
+#az_line:before { content:''; width:100%; height:5px; z-index:6; background:rgba(0,0,0,0.2); top:50px;  
+box-shadow:-1px -2px 2px 2px rgba(0,0,0,0.5); position:absolute; border-radius:5px;  
+}  
+#az_line:after { content:''; width:6px; height:40px; z-index:-15; top:73px; position:absolute; left:-120px;  
+border-radius:5px;  
+background:-moz-linear-gradient(center left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, left center, right center, from(rgba(44,62,0,1)), color-stop(66%,rgba(109,149,4,1)), color-stop(70%,rgba(109,149,4,1)), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+transform:rotate(-60deg);  
+-moz-transform:rotate(-60deg);  
+-o-transform:rotate(-60deg);  
+-webkit-transform:rotate(-60deg);  
+}  
+#sword { width:6px; height:220px; top:-5px; left:-130px;  
+box-shadow:0 -10px 8px 5px red;  
+background:-moz-linear-gradient(center left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+background:-webkit-gradient(linear, left center, right center, from(rgba(44,62,0,1)), color-stop(66%,rgba(109,149,4,1)), color-stop(70%,rgba(109,149,4,1)), to(rgba(64,82,20,1)));  
+background:-o-linear-gradient(left, rgba(44,62,0,1), rgba(109,149,4,1) 66%, rgba(109,149,4,1) 70%, rgba(64,82,20,1));  
+transform:rotate(-32deg);  
+-moz-transform:rotate(-32deg);  
+-o-transform:rotate(-32deg);  
+-webkit-transform:rotate(-32deg);  
+-moz-animation:light 3s linear infinite backwards;  
+-webkit-animation:light 3s linear infinite backwards;  
+}  
+@-moz-keyframes light {   
+50% { box-shadow:0 -10px 8px 5px skyblue; }   
+}  
+@-webkit-keyframes light {   
+50% { box-shadow:0 -10px 2px 2px skyblue; }   
+}  
+</style> 
+</head> 
+<body> 
+<div id="container"> 
+<div id="az"> 
+  <div id="az_head"></div> 
+  <div id="az_body"></div> 
+  <div id="az_lhand"></div> 
+  <div id="az_rhand"></div> 
+  <div id="az_lfoot"></div> 
+  <div id="az_rfoot"></div> 
+  <div id="az_line"></div> 
+  <div id="sword"></div> 
+</div> 
+</div> 
+</body> 
+</html> 
