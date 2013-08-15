@@ -49,12 +49,11 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 
 .left_menu dl{margin:25px 0 0 30px;}
 .left_menu dl dt a{color:#fff}
-.left_menu dl dt a:hover{color:#474bcf}
+.left_menu dl dt a:hover, .left_menu dl dd a:hover{color:#474bcf}
 .left_menu dl dt a i{font-size:22px;margin-right:15px; vertical-align:top;}
 .left_menu dl dt a span{font-size:16px;}
 .left_menu dl dd{margin:8px 0 0 35px;}
 .left_menu dl dd a{color:#fff;font-size:14px;}
-.left_menu dl dd a:hover{color:#474bcf}
 
 .left_menu .footer{position:absolute;bottom:0;left:0;width:100%;font-size:12px;line-height:40px;color:#999;text-align:center;}
 
