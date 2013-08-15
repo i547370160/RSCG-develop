@@ -95,7 +95,7 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 .home_page .job_box{height:185px;overflow: hidden;}
 .home_page .job_list_action{clear:both;border-top:1px #eee solid;margin:15px 0;padding-top:10px;text-align:center;}
 .home_page .home_job_detail .cut{position: absolute;bottom: -10px; left: -20px}
-.home_page .home_bis_title{margin-top:30px;margin-left:45px;margin-right:30px;}
+.home_page .home_bis_title{margin:30px 30px 0 45px;}
 .home_page .home_bis_title hr{margin-top:5px;}
 .home_page .home_bis .span4{padding:0 20px;}
 .home_page .home_bis a{width:100%;font-size:18px;border-bottom: 1px #006595 solid;line-height:35px;display: inline-block;margin:10px 0;}
