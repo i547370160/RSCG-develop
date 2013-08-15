@@ -91,7 +91,7 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 .home_page ul.job li span{position: absolute;left: 0;font-weight:bold;color:#006595;}
 .home_page .home_job{border: 1px #dcdcdc dashed;padding:0px 15px;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;}
 .home_page .home_job:hover{background:#f3f3f3}
-.home_page .home_job_detail{border-bottom: 1px #dcdcdc dashed;margin-left:20px;margin-bottom:20px;padding:10px 10px 20px 20px;position: relative;}
+.home_page .home_job_detail{border-bottom: 1px #dcdcdc dashed;margin:0 0 20px 20px; padding:10px 10px 20px 20px;position: relative;}
 .home_page .job_box{height:185px;overflow: hidden;}
 .home_page .job_list_action{clear:both;border-top:1px #eee solid;margin:15px 0;padding-top:10px;text-align:center;}
 .home_page .home_job_detail .cut{position: absolute;bottom: -10px; left: -20px}
