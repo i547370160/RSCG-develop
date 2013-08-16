@@ -35,8 +35,7 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 .left_menu .logo{margin:25px 0 30px 0; text-align:center;}
 .left_menu .top_nav{background:#323232;margin:0;}
 .left_menu .top_nav ul li{float:left;text-align:center;width:83px;padding:15px 0 5px 0;}
-.left_menu .top_nav ul li:hover{background:#474bcf;}
-.left_menu .top_nav ul li.cur{background:#474bcf}
+.left_menu .top_nav ul li:hover, .left_menu .top_nav ul li.cur{background:#474bcf;}
 .left_menu .top_nav ul li a{color:#fff;display:block;width:100%;}
 .left_menu .top_nav ul li a i{font-size:24px;}
 
