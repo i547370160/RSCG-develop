@@ -18,7 +18,7 @@ a.more{float:right;font-size:14px;color:#006595;}
 
 .fright{float: right;}
 .pr20{padding-right:20px;}
-.mt10{margin-top:10px;}
+.mt10{margin-top:10px;} 
 .mb20{margin-bottom:20px;}
 .lh25{line-height:25px;}
 .tright{text-align:right;}
@@ -43,9 +43,9 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 .left_menu .sub_nav{margin-top:20px;}
 .left_menu .sub_nav a{position: relative;display: block;color: #aaa;padding: 10px 20px 8px 25px;margin: 2px 0;height: 20px;font-size: 18px;}
 .left_menu .sub_nav a div{position: absolute;top: 0;left: 0;width: 6px;height: 38px;background: #555;}
-.left_menu .sub_nav a:hover div{background:#474bcf}
+.left_menu .sub_nav a:hover div, .left_menu .sub_nav a.cur div{background:#474bcf}
 .left_menu .sub_nav a.cur{color:#FFF}
-.left_menu .sub_nav a.cur div{background:#474bcf}
+{background:#474bcf}
 
 .left_menu dl{margin:25px 0 0 30px;}
 .left_menu dl dt a{color:#fff}
