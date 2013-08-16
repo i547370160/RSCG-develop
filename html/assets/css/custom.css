@@ -68,8 +68,8 @@ blockquote {clear:both;margin:0 0 20px 0;padding:10px 20px 0 50px;position:relat
 @media (max-width: 768px) { 
 	.top_line{top:80px;}
 	.tiny_top{display:block;}
-	.left_menu{display:none;}
-	.left_menu .logo{display:none;}
+	.left_menu, .left_menu .logo{display:none;}
+	{display:none;}
 	.middle_content{padding-left:0px;padding-top:80px;}
 }
 
